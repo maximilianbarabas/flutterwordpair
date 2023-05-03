@@ -53,6 +53,13 @@ class RandomWordsState extends State<RandomWords> {
         return ListTile(
             title: Text(pair.asPascalCase, style: TextStyle(fontSize: 16.0)));
       });
+
+      final List<Widget> divided =
+          ListTile.divideTiles(context: context, tiles: tiles).toList();
+
+      return Scaffold(
+          appBar: AppBar(title: Text('Saved WordPairs')),
+          body: ListView(children: divided));
     }));
   }
 
